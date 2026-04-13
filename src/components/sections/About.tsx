@@ -124,7 +124,7 @@ export const About = () => {
                             color: 'var(--accent)',
                           }}
                         >
-                          5+
+                          4+
                         </Typography>
                         <Typography
                           sx={{
@@ -151,7 +151,7 @@ export const About = () => {
                             color: 'var(--text)',
                           }}
                         >
-                          Projects Completed
+                          Certificates
                         </Typography>
                       </Box>
                     </Stack>
