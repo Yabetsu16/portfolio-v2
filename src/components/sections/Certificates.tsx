@@ -48,19 +48,25 @@ export const Certificates = () => {
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.1 }}
+            style={{ width: '100%', overflow: 'hidden' }}
           >
             <Box
               sx={{
                 display: 'grid',
-                gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' },
-                gap: 3,
+                gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(2, 1fr)' },
+                gap: { xs: 2, sm: 3 },
+                width: '100%',
+                overflow: 'hidden',
               }}
             >
               {sortedCertificates.map((cert) => (
                 <motion.div key={cert.id} variants={staggerItem}>
                   <Card
                     sx={{
+                      width: '100%',
+                      maxWidth: '100%',
+                      overflow: 'hidden',
                       backgroundColor: 'var(--bg)',
                       border: '1px solid var(--border)',
                       transition: 'all 0.3s ease',
@@ -71,7 +77,7 @@ export const Certificates = () => {
                       },
                     }}
                   >
-                    <CardContent sx={{ p: { xs: 3, md: 4 } }}>
+                    <CardContent sx={{ p: { xs: 2, sm: 3, md: 4 }, overflow: 'hidden' }}>
                       <Stack spacing={3}>
                         {/* Header */}
                         <Box
@@ -94,12 +100,13 @@ export const Certificates = () => {
                           >
                             <EmojiEventsIcon sx={{ color: 'var(--accent)' }} />
                           </Box>
-                          <Box sx={{ flex: 1 }}>
+                          <Box sx={{ flex: 1, minWidth: 0 }}>
                             <Typography
                               sx={{
                                 fontSize: '20px',
                                 fontWeight: 700,
                                 color: 'var(--text-h)',
+                                wordBreak: 'break-word',
                               }}
                             >
                               {cert.title}
