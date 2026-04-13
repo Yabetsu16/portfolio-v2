@@ -97,7 +97,7 @@ export const portfolioData: PortfolioContent = {
         live: 'https://yabetsu16.github.io/portfolio-v2/',
       },
       featured: true,
-      image: '/projects/portfolio.png',
+      image: '/portfolio/projects/portfolio.png',
       date: '2026-04-13',
     },
     {
@@ -110,7 +110,7 @@ export const portfolioData: PortfolioContent = {
         live: '',
       },
       featured: false,
-      image: '/projects/rrdntruckingservices.png',
+      image: '/portfolio/projects/rrdntruckingservices.png',
       date: '2021-06-20',
     },
     {
@@ -122,7 +122,7 @@ export const portfolioData: PortfolioContent = {
         github: '',
         live: '',
       },
-      image: '/projects/voyage-to-the-deep.jpg',
+      image: '/portfolio/projects/voyage-to-the-deep.jpg',
       date: '2018-11-15',
     },
     {
@@ -135,7 +135,7 @@ export const portfolioData: PortfolioContent = {
         live: 'https://ticketing-system-one-blond.vercel.app/login',
       },
       featured: true,
-      image: '/projects/ticketing-system.png',
+      image: '/portfolio/projects/ticketing-system.png',
       date: '2026-02-21',
     },
   ],
