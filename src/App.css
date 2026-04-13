@@ -1,0 +1,73 @@
+/* Smooth scrolling behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Global box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-border);
+}
+
+/* Container width adjustment for portfolio */
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  border-inline: none;
+}
+
+/* Smooth transitions for all interactive elements */
+button,
+a,
+.MuiButton-root,
+.MuiIconButton-root {
+  transition: all 0.3s ease;
+}
+
+/* Ensure images in project cards are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Smooth animations for scroll reveal */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Module CSS support */
+.Header__module {
+  display: contents;
+}
+
+/* Add smooth section transitions */
+section {
+  scroll-margin-top: 80px;
+}
