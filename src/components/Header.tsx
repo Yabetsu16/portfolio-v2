@@ -70,7 +70,7 @@ export const Header = () => {
               },
             }}
           >
-            Portfolio
+            Jabez Joshua Bondoc
           </Box>
 
           {/* Desktop Navigation */}

@@ -7,9 +7,15 @@ import { staggerContainer, staggerItem } from '../../utils/animations';
 import { motion } from 'framer-motion';
 
 export const Certificates = () => {
+  // Parse YYYY-MM format and convert to comparable number
+  const parseYearMonth = (dateStr: string) => {
+    const [year, month] = dateStr.split('-').map(Number);
+    return year * 12 + month;
+  };
+
   // Sort by date (newest first)
   const sortedCertificates = [...portfolioData.certificates].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    (a, b) => parseYearMonth(b.date) - parseYearMonth(a.date)
   );
 
   return (
@@ -44,7 +50,13 @@ export const Certificates = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
-            <Stack spacing={3}>
+            <Box
+              sx={{
+                display: 'grid',
+                gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' },
+                gap: 3,
+              }}
+            >
               {sortedCertificates.map((cert) => (
                 <motion.div key={cert.id} variants={staggerItem}>
                   <Card
@@ -113,20 +125,36 @@ export const Certificates = () => {
                               fontWeight: 500,
                             }}
                           >
-                            📅 {new Date(cert.date).toLocaleDateString('en-US', {
+                            📅 {new Date(cert.date + '-01').toLocaleDateString('en-US', {
                               year: 'numeric',
                               month: 'long',
                             })}
                           </Typography>
+                          {cert.expirationDate && (
+                            <Typography
+                              sx={{
+                                fontSize: '14px',
+                                color: new Date(cert.expirationDate + '-01') < new Date() ? '#ef5350' : 'var(--accent)',
+                                fontWeight: 500,
+                              }}
+                            >
+                              ⏰ Expires: {new Date(cert.expirationDate + '-01').toLocaleDateString('en-US', {
+                                year: 'numeric',
+                                month: 'long',
+                              })}
+                              {new Date(cert.expirationDate + '-01') < new Date() && ' (Expired)'}
+                            </Typography>
+                          )}
                           {cert.credentialId && (
                             <Typography
                               sx={{
                                 fontSize: '14px',
                                 color: 'var(--text)',
                                 fontWeight: 500,
+                                fontFamily: 'monospace',
                               }}
                             >
-                              ID: <code>{cert.credentialId}</code>
+                              ID: {cert.credentialId}
                             </Typography>
                           )}
                         </Stack>
@@ -189,7 +217,7 @@ export const Certificates = () => {
                   </Card>
                 </motion.div>
               ))}
-            </Stack>
+            </Box>
           </motion.div>
         </Stack>
       </Container>

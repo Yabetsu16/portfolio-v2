@@ -47,6 +47,7 @@ export interface Certificate {
   title: string;
   issuer: string;
   date: string;
+  expirationDate?: string;
   credentialUrl?: string;
   credentialId?: string;
   skills?: string[];
