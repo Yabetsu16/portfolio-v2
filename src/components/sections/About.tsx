@@ -170,7 +170,7 @@ export const About = () => {
                       Tech Stack
                     </Typography>
                     <Stack direction="row" sx={{ flexWrap: 'wrap', gap: 1 }}>
-                      {['React', 'TypeScript', 'Node.js', 'PostgreSQL'].map((tech) => (
+                      {['C#', 'React', 'TypeScript', 'SQL'].map((tech) => (
                         <Chip
                           key={tech}
                           label={tech}
