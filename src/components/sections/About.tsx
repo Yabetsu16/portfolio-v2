@@ -1,4 +1,5 @@
 import { Box, Container, Typography, Stack, Chip } from '@mui/material';
+import SchoolIcon from '@mui/icons-material/School';
 import { motion } from 'framer-motion';
 import { ScrollReveal } from '../../utils/ScrollReveal';
 import { portfolioData } from '../../data/portfolio';
@@ -34,6 +35,8 @@ export const About = () => {
                 fontSize: '18px',
                 color: 'var(--text)',
                 maxWidth: '600px',
+                textAlign: 'center',
+                mx: 'auto',
               }}
             >
               {portfolioData.about.headline}
@@ -98,6 +101,100 @@ export const About = () => {
                 viewport={{ once: true, amount: 0.3 }}
               >
                 <Stack spacing={3}>
+                  {/* Education */}
+                  <Box>
+                    <Typography
+                      sx={{
+                        fontSize: '16px',
+                        fontWeight: 600,
+                        color: 'var(--text-h)',
+                        mb: 2,
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 1,
+                      }}
+                    >
+                      <SchoolIcon sx={{ fontSize: '20px' }} />
+                      Education
+                    </Typography>
+                    <Stack spacing={2}>
+                      {portfolioData.education.map((edu) => (
+                        <Box
+                          key={edu.id}
+                          sx={{
+                            p: 2,
+                            backgroundColor: 'var(--accent-bg)',
+                            borderRadius: '8px',
+                            border: '1px solid var(--accent-border)',
+                          }}
+                        >
+                          <Typography
+                            sx={{
+                              fontSize: '15px',
+                              fontWeight: 600,
+                              color: 'var(--text-h)',
+                              mb: 0.5,
+                            }}
+                          >
+                            {edu.degree}
+                          </Typography>
+                          <Typography
+                            sx={{
+                              fontSize: '14px',
+                              color: 'var(--accent)',
+                              fontWeight: 500,
+                              mb: 0.5,
+                            }}
+                          >
+                            {edu.school}
+                          </Typography>
+                          <Typography
+                            sx={{
+                              fontSize: '13px',
+                              color: 'var(--text)',
+                              mb: 1,
+                            }}
+                          >
+                            Major: {edu.fieldOfStudy}
+                          </Typography>
+                          <Typography
+                            sx={{
+                              fontSize: '12px',
+                              color: 'var(--text)',
+                              mb: edu.awards && edu.awards.length > 0 ? 1 : 0,
+                            }}
+                          >
+                            {new Date(edu.startDate).toLocaleDateString('en-US', {
+                              year: 'numeric',
+                              month: 'short',
+                            })}{' '}
+                            -{' '}
+                            {new Date(edu.endDate).toLocaleDateString('en-US', {
+                              year: 'numeric',
+                              month: 'short',
+                            })}
+                          </Typography>
+                          {edu.awards && edu.awards.length > 0 && (
+                            <Stack spacing={0.5}>
+                              {edu.awards.map((award, idx) => (
+                                <Typography
+                                  key={idx}
+                                  sx={{
+                                    fontSize: '12px',
+                                    color: 'var(--accent)',
+                                    fontStyle: 'italic',
+                                  }}
+                                >
+                                  🏆 {award}
+                                </Typography>
+                              ))}
+                            </Stack>
+                          )}
+                        </Box>
+                      ))}
+                    </Stack>
+                  </Box>
+
                   <Box
                     sx={{
                       p: 3,

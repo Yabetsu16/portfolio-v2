@@ -19,6 +19,19 @@ export const portfolioData: PortfolioContent = {
       'Dedicated to continuous learning and professional growth',
     ],
   },
+  education: [
+    {
+      id: 'edu-1',
+      school: 'AMA Computer College - Caloocan',
+      degree: 'Bachelor of Science in Information Technology',
+      fieldOfStudy: 'Web Development',
+      startDate: '2015-05-01',
+      endDate: '2019-05-31',
+      awards: [
+        "Dean's Lister for SY 2016-2017 with G.W.A of 1.60"
+      ],
+    },
+  ],
   experiences: [
     {
       id: 'exp-1',

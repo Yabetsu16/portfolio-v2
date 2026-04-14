@@ -54,6 +54,16 @@ export interface Certificate {
   image?: string;
 }
 
+export interface Education {
+  id: string;
+  school: string;
+  degree: string;
+  fieldOfStudy: string;
+  startDate: string;
+  endDate: string;
+  awards?: string[];
+}
+
 export interface PortfolioContent {
   personal: {
     name: string;
@@ -71,5 +81,6 @@ export interface PortfolioContent {
   skills: Skill[];
   projects: Project[];
   certificates: Certificate[];
+  education: Education[];
   social: SocialLink[];
 }
