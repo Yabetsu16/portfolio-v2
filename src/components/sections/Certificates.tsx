@@ -49,7 +49,7 @@ export const Certificates = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
-            style={{ width: '100%', overflow: 'hidden' }}
+            style={{ width: '100%' }}
           >
             <Box
               sx={{
@@ -57,7 +57,6 @@ export const Certificates = () => {
                 gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(2, 1fr)' },
                 gap: { xs: 2, sm: 3 },
                 width: '100%',
-                overflow: 'hidden',
               }}
             >
               {sortedCertificates.map((cert) => (
@@ -77,7 +76,7 @@ export const Certificates = () => {
                       },
                     }}
                   >
-                    <CardContent sx={{ p: { xs: 2, sm: 3, md: 4 }, overflow: 'hidden' }}>
+                    <CardContent sx={{ p: { xs: 2, sm: 3, md: 4 } }}>
                       <Stack spacing={3}>
                         {/* Header */}
                         <Box
@@ -95,25 +94,27 @@ export const Certificates = () => {
                               display: 'flex',
                               alignItems: 'center',
                               justifyContent: 'center',
-                              minWidth: '48px',
+                              minWidth: { xs: '40px', sm: '48px' },
+                              flexShrink: 0,
                             }}
                           >
-                            <EmojiEventsIcon sx={{ color: 'var(--accent)' }} />
+                            <EmojiEventsIcon sx={{ color: 'var(--accent)', fontSize: { xs: '20px', sm: '24px' } }} />
                           </Box>
                           <Box sx={{ flex: 1, minWidth: 0 }}>
                             <Typography
                               sx={{
-                                fontSize: '20px',
+                                fontSize: { xs: '15px', sm: '18px', md: '20px' },
                                 fontWeight: 700,
                                 color: 'var(--text-h)',
                                 wordBreak: 'break-word',
+                                overflowWrap: 'break-word',
                               }}
                             >
                               {cert.title}
                             </Typography>
                             <Typography
                               sx={{
-                                fontSize: '16px',
+                                fontSize: { xs: '13px', sm: '14px', md: '16px' },
                                 color: 'var(--accent)',
                                 fontWeight: 600,
                               }}
@@ -155,10 +156,12 @@ export const Certificates = () => {
                           {cert.credentialId && (
                             <Typography
                               sx={{
-                                fontSize: '14px',
+                                fontSize: { xs: '11px', sm: '12px', md: '14px' },
                                 color: 'var(--text)',
                                 fontWeight: 500,
                                 fontFamily: 'monospace',
+                                wordBreak: 'break-all',
+                                flex: '1 1 100%',
                               }}
                             >
                               ID: {cert.credentialId}
