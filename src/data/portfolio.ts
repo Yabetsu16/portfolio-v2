@@ -12,7 +12,7 @@ export const portfolioData: PortfolioContent = {
     headline:
       "Enterprise software engineering, cloud infrastructure, and practical automation.",
     heroSummary:
-      "I modernize business systems and build automation that saves time.",
+      "I develop software and automation tools that modernize business systems and save time.",
     summary:
       "Results-driven Enterprise Software Engineer with 4+ years of professional experience building, maintaining, and modernizing business-critical applications. Proficient across the Microsoft ecosystem, including C#, .NET, ASP.NET, MS SQL Server, and VB.NET, as well as low-level C. Experienced in developing desktop tools and Python automation to reduce operational work, modernize systems, and support reliable delivery. Cloud-certified in AWS, Azure, and Oracle Cloud Infrastructure, with additional credentials in AI engineering and AI-assisted development.",
     highlights: [
