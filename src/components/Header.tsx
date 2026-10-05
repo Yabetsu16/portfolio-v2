@@ -5,6 +5,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import { useTheme } from '../contexts/ThemeContext';
+import { portfolioData } from '../data/portfolio';
 
 
 interface NavLink {
@@ -18,6 +19,7 @@ const navLinks: NavLink[] = [
   { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
   { label: 'Certificates', href: '#certificates' },
+  { label: 'Contact', href: '#contact' },
 ];
 
 export const Header = () => {
@@ -70,7 +72,7 @@ export const Header = () => {
               },
             }}
           >
-            Jabez Joshua Bondoc
+            {portfolioData.personal.name}
           </Box>
 
           {/* Desktop Navigation */}

@@ -119,7 +119,7 @@ export const Projects = () => {
                       </Box>
                     )}
 
-                    <CardContent sx={{ pb: 3, flex: 1 }}>
+                    <CardContent sx={{ pb: { xs: 4, md: 3 }, flex: 1 }}>
                       <Stack spacing={2}>
                         {/* Title */}
                         <Typography
@@ -144,19 +144,35 @@ export const Projects = () => {
                           )}
                         </Typography>
 
+                        {project.date && (
+                          <Typography
+                            sx={{
+                              fontSize: '14px',
+                              color: 'var(--accent)',
+                              fontWeight: 600,
+                            }}
+                          >
+                            Built in {project.date.slice(0, 4)}
+                          </Typography>
+                        )}
+
                         {/* Description */}
                         <Typography
                           sx={{
                             fontSize: '15px',
                             color: 'var(--text)',
                             lineHeight: 1.6,
+                            textAlign: 'justify',
                           }}
                         >
                           {project.description}
                         </Typography>
 
                         {/* Technologies */}
-                        <Stack direction="row" spacing={1} sx={{ flexWrap: 'wrap' }}>
+                        <Stack
+                          direction="row"
+                          sx={{ flexWrap: 'wrap', gap: 1, pb: { xs: 1, md: 0 } }}
+                        >
                           {project.technologies.map((tech) => (
                             <Chip
                               key={tech}

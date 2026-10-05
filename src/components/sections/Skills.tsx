@@ -1,12 +1,12 @@
 import { Box, Container, Typography, Stack, Card, CardContent } from '@mui/material';
 import { ScrollReveal } from '../../utils/ScrollReveal';
-import { portfolioData } from '../../data/portfolio';
+import { skills } from '../../data/skills';
 import { staggerContainer, staggerItem } from '../../utils/animations';
 import { motion } from 'framer-motion';
 
 export const Skills = () => {
   // Group skills by category
-  const skillsByCategory = portfolioData.skills.reduce(
+  const skillsByCategory = skills.reduce(
     (acc, skill) => {
       if (!acc[skill.category]) {
         acc[skill.category] = [];
@@ -14,7 +14,7 @@ export const Skills = () => {
       acc[skill.category].push(skill);
       return acc;
     },
-    {} as Record<string, typeof portfolioData.skills>
+    {} as Record<string, typeof skills>
   );
 
   const categories = Object.keys(skillsByCategory).sort();

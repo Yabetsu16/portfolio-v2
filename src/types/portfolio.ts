@@ -18,10 +18,20 @@ export interface Experience {
   location?: string;
 }
 
+export type SkillCategory =
+  | 'Programming Languages'
+  | 'Tools'
+  | 'Languages'
+  | 'Cloud'
+  | 'Databases'
+  | 'Web & UI'
+  | 'AI & Automation'
+  | 'Other';
+
 export interface Skill {
   id: string;
   name: string;
-  category: 'Programming Languages' | 'Tools' | 'Languages' | 'Cloud' | 'Other';
+  category: SkillCategory;
   proficiency?: 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert';
   icon?: string;
 }
@@ -46,7 +56,7 @@ export interface Certificate {
   id: string;
   title: string;
   issuer: string;
-  date: string;
+  date?: string;
   expirationDate?: string;
   credentialUrl?: string;
   credentialId?: string;
@@ -74,13 +84,12 @@ export interface PortfolioContent {
   };
   about: {
     headline: string;
+    heroSummary: string;
     summary: string;
     highlights: string[];
   };
   experiences: Experience[];
-  skills: Skill[];
   projects: Project[];
-  certificates: Certificate[];
   education: Education[];
   social: SocialLink[];
 }

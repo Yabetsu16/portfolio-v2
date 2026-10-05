@@ -60,6 +60,7 @@ export const About = () => {
                     fontSize: '16px',
                     color: 'var(--text)',
                     lineHeight: 1.8,
+                    textAlign: 'justify',
                   }}
                 >
                   {portfolioData.about.summary}
@@ -82,6 +83,7 @@ export const About = () => {
                         sx={{
                           fontSize: '15px',
                           color: 'var(--text)',
+                          textAlign: 'left',
                         }}
                       >
                         {highlight}

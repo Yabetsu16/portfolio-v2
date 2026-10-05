@@ -12,6 +12,8 @@ A modern, fully-responsive single-page portfolio built with **React 19**, **Type
 🔗 **Social Integration** — Links to GitHub, LinkedIn, Twitter, Email  
 ⚙️ **Easy to Customize** — Centralized data structure for simple content updates  
 
+For instructions on editing portfolio content, see [CONTENT_GUIDE.md](./CONTENT_GUIDE.md).
+
 ## Tech Stack
 
 - **Frontend Framework** — React 19 with TypeScript
@@ -20,4 +22,3 @@ A modern, fully-responsive single-page portfolio built with **React 19**, **Type
 - **Build Tool** — Vite 8 with React plugin
 - **Styling** — CSS variables + Material-UI sx prop
 - **Linting** — ESLint with TypeScript support
-

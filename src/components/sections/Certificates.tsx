@@ -2,7 +2,7 @@ import { Box, Container, Typography, Stack, Card, CardContent, Chip, Button } fr
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { ScrollReveal } from '../../utils/ScrollReveal';
-import { portfolioData } from '../../data/portfolio';
+import { certificates } from '../../data/certificates';
 import { staggerContainer, staggerItem } from '../../utils/animations';
 import { motion } from 'framer-motion';
 
@@ -14,8 +14,8 @@ export const Certificates = () => {
   };
 
   // Sort by date (newest first)
-  const sortedCertificates = [...portfolioData.certificates].sort(
-    (a, b) => parseYearMonth(b.date) - parseYearMonth(a.date)
+  const sortedCertificates =   [...certificates].sort(
+    (a, b) => parseYearMonth(b.date ?? '0000-00') - parseYearMonth(a.date ?? '0000-00')
   );
 
   return (
@@ -124,20 +124,22 @@ export const Certificates = () => {
                           </Box>
                         </Box>
 
-                        {/* Date & Credential ID */}
+                        {/* Certificate dates */}
                         <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ flexWrap: 'wrap' }}>
-                          <Typography
-                            sx={{
-                              fontSize: '14px',
-                              color: 'var(--text)',
-                              fontWeight: 500,
-                            }}
-                          >
-                            📅 {new Date(cert.date + '-01').toLocaleDateString('en-US', {
-                              year: 'numeric',
-                              month: 'long',
-                            })}
-                          </Typography>
+                          {cert.date && (
+                            <Typography
+                              sx={{
+                                fontSize: '14px',
+                                color: 'var(--text)',
+                                fontWeight: 500,
+                              }}
+                            >
+                              📅 {new Date(cert.date + '-01').toLocaleDateString('en-US', {
+                                year: 'numeric',
+                                month: 'long',
+                              })}
+                            </Typography>
+                          )}
                           {cert.expirationDate && (
                             <Typography
                               sx={{
@@ -151,20 +153,6 @@ export const Certificates = () => {
                                 month: 'long',
                               })}
                               {new Date(cert.expirationDate + '-01') < new Date() && ' (Expired)'}
-                            </Typography>
-                          )}
-                          {cert.credentialId && (
-                            <Typography
-                              sx={{
-                                fontSize: { xs: '11px', sm: '12px', md: '14px' },
-                                color: 'var(--text)',
-                                fontWeight: 500,
-                                fontFamily: 'monospace',
-                                wordBreak: 'break-all',
-                                flex: '1 1 100%',
-                              }}
-                            >
-                              ID: {cert.credentialId}
                             </Typography>
                           )}
                         </Stack>

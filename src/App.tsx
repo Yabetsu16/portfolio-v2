@@ -10,6 +10,7 @@ import Experience from './components/sections/Experience';
 import Skills from './components/sections/Skills';
 import Projects from './components/sections/Projects';
 import Certificates from './components/sections/Certificates';
+import Contact from './components/sections/Contact';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Skills />
           <Projects />
           <Certificates />
+          <Contact />
         </Box>
         <Footer />
       </Box>

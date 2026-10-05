@@ -54,7 +54,7 @@ export const Experience = () => {
                       },
                     }}
                   >
-                    <CardContent sx={{ p: { xs: 3, md: 4 } }}>
+                    <CardContent sx={{ p: { xs: 3, md: 4 }, pb: { xs: 4, md: 4 } }}>
                       <Stack spacing={3}>
                         {/* Header */}
                         <Box
@@ -128,6 +128,7 @@ export const Experience = () => {
                             fontSize: '15px',
                             color: 'var(--text)',
                             lineHeight: 1.6,
+                            textAlign: 'justify',
                           }}
                         >
                           {exp.description}
@@ -143,6 +144,7 @@ export const Experience = () => {
                                 color: 'var(--text)',
                                 pl: 2,
                                 borderLeft: '2px solid var(--accent)',
+                                textAlign: 'left',
                               }}
                             >
                               {highlight}
@@ -151,7 +153,10 @@ export const Experience = () => {
                         </Stack>
 
                         {/* Technologies */}
-                        <Stack direction="row" spacing={1} sx={{ flexWrap: 'wrap' }}>
+                        <Stack
+                          direction="row"
+                          sx={{ flexWrap: 'wrap', gap: 1, pb: { xs: 1, md: 0 } }}
+                        >
                           {exp.technologies.map((tech) => (
                             <Chip
                               key={tech}

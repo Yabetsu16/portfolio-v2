@@ -63,10 +63,17 @@ export const Hero = () => {
                         </Typography>
 
                         <Typography
+                            component="h2"
                             sx={{
-                                fontSize: '16px',
-                                color: 'var(--text)',
-                                lineHeight: 1.6,
+                                maxWidth: '800px',
+                                mx: 'auto',
+                                mt: 2,
+                                fontSize: { xs: '24px', sm: '30px', md: '36px' },
+                                color: 'var(--text-h)',
+                                fontWeight: 700,
+                                lineHeight: 1.25,
+                                letterSpacing: '-0.5px',
+                                textAlign: 'center',
                             }}
                         >
                             {portfolioData.personal.bio}
@@ -78,16 +85,17 @@ export const Hero = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-                        style={{ maxWidth: '600px' }}
+                        style={{ maxWidth: '600px', textAlign: 'center' }}
                     >
                         <Typography
                             sx={{
-                                fontSize: '18px',
+                                fontSize: { xs: '16px', md: '18px' },
                                 color: 'var(--text)',
                                 lineHeight: 1.6,
+                                textAlign: 'center',
                             }}
                         >
-                            {portfolioData.about.summary}
+                            {portfolioData.about.heroSummary}
                         </Typography>
                     </motion.div>
 
